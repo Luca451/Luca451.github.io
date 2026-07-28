@@ -334,6 +334,7 @@ nav a:hover{
 
 h1{
 
+    color:var(--cream);
 
     font-size:110px;
 
@@ -342,7 +343,6 @@ h1{
     margin:30px 0;
 
     letter-spacing:-5px;
-
 
 }
 
@@ -1371,8 +1371,4 @@ NAV HOVER
 
     letter-spacing:2px;
 
-}
-
-.hero .tag {
-    color: #d8c7a3 !important;
 }
