@@ -1372,3 +1372,11 @@ NAV HOVER
     letter-spacing:2px;
 
 }
+
+/* HERO TEXT WHITE */
+
+.hero h1,
+.hero .description,
+.hero .tag {
+    color: white;
+}
