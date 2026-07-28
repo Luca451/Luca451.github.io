@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+        3MI Studio | About
+    </title>
+
+
+
+    <!-- 
+         GOOGLE FONT
+     -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+        rel="stylesheet"
+    >
+
+
+
+
+    <!-- 
+         STYLE
+     -->
+
+    <link 
+        rel="stylesheet"
+        href="assets/css/style.css"
+    >
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+<!-- 
+     BACKGROUND
+ -->
+
+
+<div class="background-layer"></div>
+
+
+
+
+
+
+<!-- 
+     PAGE
+ -->
+
+
+<div class="page">
+
+
+
+
+
+
+<!-- 
+     NAVBAR
+ -->
+
+
+<header class="navbar">
+
+
+    <div class="logo">
+
+
+        3MI
+
+
+    </div>
+
+
+
+
+
+    <nav>
+
+
+        <a href="index.html">
+            HOME
+        </a>
+
+
+        <a href="portfolio.html">
+            PORTFOLIO
+        </a>
+
+
+        <a 
+            class="active"
+            href="about.html"
+        >
+            ABOUT
+        </a>
+
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+
+    </nav>
+
+
+</header>
+
+
+
+
+
+
+
+<!-- 
+     ABOUT HERO
+ -->
+
+
+<section class="portfolio-hero">
+
+
+    <p class="tag">
+
+        ABOUT 3MI
+
+    </p>
+
+
+
+
+
+    <h1>
+
+        OUR
+        <br>
+        STORY
+
+    </h1>
+
+
+
+
+
+    <p class="description">
+
+    Ich bin Musikproduzent und Audio Engineer mit Leidenschaft für hochwertigen Sound und individuelle Produktionen. 
+    Mein Fokus liegt darauf, kreative Ideen professionell umzusetzen – von der ersten Aufnahme bis zum fertigen Release.
+    Ich biete professionelle Recordings für Vocals, Instrumente und komplette Produktionen sowie präzises Mixing für einen modernen, ausgewogenen Studiosound. 
+    Durch sorgfältiges Mastering erhalten Songs den letzten Feinschliff und sind optimal für Streaming-Plattformen und Releases vorbereitet.
+    Darüber hinaus komponiere ich individuelle Musik mit eigener Atmosphäre und entwickle passendes Sounddesign sowie Vertonungen für verschiedenste Medienprojekte. 
+    Mein Anspruch ist es, jede Produktion klanglich auf höchstem Niveau umzusetzen und den Charakter jedes Projekts authentisch hervorzuheben.
+
+    </p>
+
+
+</section>
+
+
+
+
+
+<section class="about-image-section">
+
+
+    <article class="about-image-card">
+
+
+        <img 
+            src="assets/images/about/project2.jpg"
+            alt="3MI Studio Raum"
+        >
+
+
+
+        <div class="about-overlay">
+
+            <h2>
+                3MI STUDIO
+            </h2>
+
+        </div>
+
+
+    </article>
+
+
+</section>
+
+
+
+
+<!-- 
+     PROCESS SECTION
+ -->
+
+
+<section class="artist">
+
+
+    <div>
+
+
+        <p class="tag">
+
+            OUR PROCESS
+
+        </p>
+
+
+
+
+
+        <h2>
+
+            IDEA
+            <br>
+            TO
+            <br>
+            IMPACT
+
+        </h2>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="artist-box">
+
+
+        3MI
+
+        <br>
+
+        CREATIVE LAB
+
+
+    </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- 
+     FOOTER
+ -->
+
+
+<footer>
+
+
+    <div>
+
+        © 2026 3MI Studio
+
+    </div>
+
+
+
+
+    <div>
+
+        Music • Artists • Production
+
+    </div>
+
+
+</footer>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 
+     BACKGROUND ANIMATION
+ -->
+
+
+<script>
+
+
+const background =
+document.querySelector(".background-layer");
+
+
+
+let mouseX = 0;
+
+let mouseY = 0;
+
+
+
+
+
+document.addEventListener(
+    "mousemove",
+    (event)=>{
+
+
+        mouseX =
+        (event.clientX / window.innerWidth - 0.5) * 35;
+
+
+
+        mouseY =
+        (event.clientY / window.innerHeight - 0.5) * 35;
+
+
+    }
+);
+
+
+
+
+
+
+function animateBackground(){
+
+
+
+    background.style.transform =
+
+
+    `
+        translate(${-mouseX}px, ${-mouseY}px)
+        scale(1.1)
+    `;
+
+
+
+    requestAnimationFrame(
+        animateBackground
+    );
+
+
+}
+
+
+
+animateBackground();
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+<!-- 
+     PAGE TRANSITION
+ -->
+
+
+<script>
+
+
+const page =
+document.querySelector(".page");
+
+
+
+const links =
+document.querySelectorAll("nav a");
+
+
+
+
+
+links.forEach(link => {
+
+
+
+    link.addEventListener(
+        "click",
+        event => {
+
+
+
+            const target =
+            link.getAttribute("href");
+
+
+
+            if(
+                target &&
+                target.endsWith(".html") &&
+                !link.classList.contains("active")
+            ){
+
+
+                event.preventDefault();
+
+
+
+                page.classList.add(
+                    "page-leave"
+                );
+
+
+
+
+                setTimeout(()=>{
+
+
+                    window.location.href =
+                    target;
+
+
+
+                },500);
+
+
+            }
+
+
+        }
+    );
+
+
+});
+
+
+
+</script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3MI Studio</title>
+
+
+    <!-- 
+         GOOGLE FONT
+     -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- 
+         STYLE
+     -->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+
+
+<body>
+
+
+<!-- 
+     BACKGROUND
+ -->
+
+<div class="background-layer"></div>
+
+
+
+<!-- 
+     PAGE WRAPPER
+ -->
+
+<div class="page">
+
+
+<!-- 
+     NAVIGATION
+ -->
+
+<header class="navbar">
+
+
+    <div class="logo">
+
+        3MI
+
+    </div>
+
+
+
+    <nav>
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="portfolio.html">
+            PORTFOLIO
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="contact.html">
+            CONTACT
+        </a>
+
+    </nav>
+
+
+</header>
+
+
+
+
+
+<!-- 
+     HERO SECTION
+ -->
+
+<section class="hero">
+
+
+    <div class="hero-text">
+
+
+        <p class="tag">
+            PREMIUM MUSIC PRODUCTION
+        </p>
+
+
+        <h1>
+            CREATE.
+            <br>
+            RECORD.
+            <br>
+            DEFINE.
+        </h1>
+
+
+        <p class="description">
+
+            3MI Studio entwickelt moderne Sounds,
+            Artists und Produktionen mit einer
+            klaren Vision.
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <!-- STUDIO STATUS CARD -->
+
+    <div class="hero-card">
+
+
+        <div class="card-top">
+
+            3MI STUDIO
+
+        </div>
+
+
+
+        <div class="wave">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
+
+        <div class="card-info">
+
+
+            <div>
+                STATUS
+                <strong>
+                    ONLINE
+                </strong>
+            </div>
+
+
+            <div>
+                BPM
+                <strong>
+                    140
+                </strong>
+            </div>
+
+
+            <div>
+                QUALITY
+                <strong>
+                    48 KHZ
+                </strong>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+<!-- 
+     SERVICES / PAKETE
+ -->
+
+
+<section class="services">
+
+
+    <div class="section-title">
+
+        WHAT WE DO
+
+    </div>
+
+
+
+
+    <div class="cards">
+
+
+
+        <article class="service-card">
+
+            <h3>
+                Recording
+            </h3>
+
+            <p>
+                Professionelle Aufnahme
+                von Vocals, Instrumenten
+                und Produktionen.
+            </p>
+
+        </article>
+
+
+
+
+        <article class="service-card">
+
+            <h3>
+                Mixing
+            </h3>
+
+            <p>
+                Präzises Mixing für
+                einen modernen Studiosound.
+            </p>
+
+        </article>
+
+
+
+
+        <article class="service-card">
+
+            <h3>
+                Mastering
+            </h3>
+
+            <p>
+                Finaler Klang für Streaming,
+                Releases und Plattformen.
+            </p>
+
+        </article>
+
+
+
+
+        <article class="service-card">
+
+            <h3>
+                Vertonung
+            </h3>
+
+            <p>
+                Musik und Sounddesign
+                für Medienprojekte.
+            </p>
+
+        </article>
+
+
+
+
+        <article class="service-card">
+
+            <h3>
+                Komposition
+            </h3>
+
+            <p>
+                Individuelle Musikproduktion
+                mit eigener Atmosphäre.
+            </p>
+
+        </article>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+<!-- 
+     ARTIST DEVELOPMENT
+ -->
+
+
+<section class="artist">
+
+
+    <div>
+
+        <p class="tag">
+            ARTIST DEVELOPMENT
+        </p>
+
+
+        <h2>
+
+            FROM IDEA
+            <br>
+            TO RELEASE
+
+        </h2>
+
+
+    </div>
+
+
+
+
+    <div class="artist-box">
+
+        3MI
+
+        <br>
+
+        CREATIVE LAB
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+<!-- 
+     FOOTER
+ -->
+
+
+<footer>
+
+
+    <div>
+        © 2026 3MI Studio
+    </div>
+
+
+    <div>
+        Music • Artists • Production
+    </div>
+
+
+</footer>
+
+
+
+
+</div>
+
+
+
+
+
+<!-- 
+     BACKGROUND MOVEMENT
+ -->
+
+<script>
+
+
+const background = document.querySelector(".background-layer");
+
+
+let mouseX = 0;
+let mouseY = 0;
+
+
+
+document.addEventListener(
+    "mousemove",
+    (event)=>{
+
+
+        mouseX =
+        (event.clientX / window.innerWidth - 0.5) * 35;
+
+
+        mouseY =
+        (event.clientY / window.innerHeight - 0.5) * 35;
+
+
+    }
+);
+
+
+
+function animateBackground(){
+
+
+    background.style.transform =
+
+    `
+    translate(${-mouseX}px, ${-mouseY}px)
+    scale(1.1)
+    `;
+
+
+    requestAnimationFrame(
+        animateBackground
+    );
+
+}
+
+
+animateBackground();
+
+
+
+</script>
+
+
+
+
+
+<!-- 
+     PAGE TRANSITION
+ -->
+
+<script>
+
+
+const page = document.querySelector(".page");
+
+
+document
+.querySelectorAll("nav a")
+.forEach(link => {
+
+
+    link.addEventListener(
+        "click",
+        event => {
+
+
+            const target =
+            link.getAttribute("href");
+
+
+            if(
+                target &&
+                target.endsWith(".html")
+            ){
+
+
+                event.preventDefault();
+
+
+                page.classList.add(
+                    "page-leave"
+                );
+
+
+                setTimeout(()=>{
+
+
+                    window.location.href =
+                    target;
+
+
+                },500);
+
+
+            }
+
+
+        }
+    );
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
