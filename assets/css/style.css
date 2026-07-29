@@ -1331,13 +1331,14 @@ NAV HOVER
 
     background:
 
-    color:var(--cream)
 
 }
 
 
 
 .about-overlay h2 {
+
+    color:var(--cream);
 
     font-size:40px;
 
