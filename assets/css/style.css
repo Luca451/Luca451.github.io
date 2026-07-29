@@ -1331,10 +1331,7 @@ NAV HOVER
 
     background:
 
-    linear-gradient(
-        transparent,
-        rgba(0,0,0,.85)
-    );
+    color:var(--cream)
 
 }
 
