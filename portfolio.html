@@ -191,5 +191,62 @@ transitionLinks.forEach((transitionLink) => {
 
 </script>
 
+<!-- 
+     BACKGROUND MOVEMENT
+ -->
+
+<script>
+
+
+const background = document.querySelector(".background-layer");
+
+
+let mouseX = 0;
+let mouseY = 0;
+
+
+
+document.addEventListener(
+    "mousemove",
+    (event)=>{
+
+
+        mouseX =
+        (event.clientX / window.innerWidth - 0.5) * 35;
+
+
+        mouseY =
+        (event.clientY / window.innerHeight - 0.5) * 35;
+
+
+    }
+);
+
+
+
+function animateBackground(){
+
+
+    background.style.transform =
+
+    `
+    translate(${-mouseX}px, ${-mouseY}px)
+    scale(1.1)
+    `;
+
+
+    requestAnimationFrame(
+        animateBackground
+    );
+
+}
+
+
+animateBackground();
+
+
+
+</script>
+
 </body>
 </html>
