@@ -538,6 +538,7 @@ button{
 
 .services{
 
+    color:var(--cream);
     padding:100px 0;
 
     max-width:1200px;
@@ -665,6 +666,7 @@ button{
 
 .artist{
 
+    color:var(--cream);
 
     display:flex;
 
@@ -805,15 +807,13 @@ footer{
 
 .portfolio-card{
 
+    color:var(--cream);
 
     background:var(--surface);
 
-
     border-radius:25px;
 
-
     overflow:hidden;
-
 
     transition:.4s;
 
