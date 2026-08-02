@@ -734,38 +734,80 @@ footer{
 
 }
 
-@media(max-width:900px){
+@media (max-width: 900px) {
 
+    .page{
+        padding:20px;
+    }
 
     .hero{
 
-
         grid-template-columns:1fr;
+        gap:40px;
+        min-height:auto;
 
     }
 
+    .hero h1{
 
-
-    h1{
-
-        font-size:70px;
+        font-size:55px;
+        letter-spacing:-2px;
 
     }
 
+    .description{
+
+        font-size:16px;
+
+    }
+
+    .hero-card{
+
+        width:100%;
+        height:auto;
+
+    }
 
     .cards{
 
         grid-template-columns:1fr;
+        gap:20px;
 
     }
 
+    .service-card{
 
-    nav{
-
-        display:none;
+        grid-column:auto !important;
 
     }
 
+    .portfolio-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .artist{
+
+        flex-direction:column;
+        gap:40px;
+        text-align:center;
+
+    }
+
+    .artist h2{
+
+        font-size:55px;
+
+    }
+
+    .artist-box{
+
+        width:220px;
+        height:220px;
+        font-size:28px;
+
+    }
 
 }
 
@@ -1328,8 +1370,7 @@ NAV HOVER
 
     padding:50px;
 
-
-    background:
+    background-color: #111;
 
 
 }
@@ -1347,11 +1388,93 @@ NAV HOVER
 }
 
 
-
 .about-overlay p {
 
     color:#aaa;
 
     letter-spacing:2px;
+
+}
+
+/* MOBILE MENU */
+
+.menu-toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:var(--cream);
+
+    font-size:32px;
+
+    cursor:pointer;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+
+    .navbar{
+
+        position:relative;
+
+    }
+
+
+    .nav-menu{
+
+        position:absolute;
+
+        top:80px;
+
+        left:0;
+
+        right:0;
+
+        background:var(--surface);
+
+        border-radius:20px;
+
+        padding:30px;
+
+        display:none;
+
+        flex-direction:column;
+
+        gap:25px;
+
+        text-align:center;
+
+    }
+
+
+    .nav-menu.active{
+
+        display:flex;
+
+    }
+
+
+    .nav-menu a{
+
+        font-size:18px;
+
+        color:var(--cream);
+
+    }
+
 
 }

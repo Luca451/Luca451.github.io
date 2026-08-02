@@ -65,23 +65,28 @@
 
 
 
-    <nav>
+    <button class="menu-toggle">
+        ☰
+    </button>
 
-        <a href="index.html">
-            HOME
-        </a>
 
-        <a href="portfolio.html">
-            PORTFOLIO
-        </a>
+    <nav class="nav-menu">
 
-        <a href="about.html">
-            ABOUT
-        </a>
+    <a href="index.html">
+        HOME
+    </a>
 
-        <a href="contact.html">
-            CONTACT
-        </a>
+    <a href="portfolio.html">
+        PORTFOLIO
+    </a>
+
+    <a href="about.html">
+        ABOUT
+    </a>
+
+    <a href="contact.html">
+        CONTACT
+    </a>
 
     </nav>
 
@@ -508,6 +513,19 @@ document
 </script>
 
 
+<script>
+
+const menuButton = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".nav-menu");
+
+
+menuButton.addEventListener("click",()=>{
+
+    menu.classList.toggle("active");
+
+});
+
+</script>
 
 </body>
 
