@@ -1322,15 +1322,18 @@ NAV HOVER
  */
 
 
-.about-image-section {
+@media(max-width:900px){
 
-    max-width:1200px;
 
-    margin:100px auto;
+    .about-image-section{
+
+        width:100%;
+
+        margin:50px 0;
+
+    }
 
 }
-
-
 
 .about-image-card {
 
