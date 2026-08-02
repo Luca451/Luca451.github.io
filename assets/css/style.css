@@ -664,6 +664,7 @@ button{
 
 /* ARTIST */
 
+
 .artist{
 
     color:var(--cream);
@@ -674,23 +675,19 @@ button{
 
     align-items:center;
 
-    padding:120px 0;
-
-
-}
-
-.artist{
-
     max-width:1200px;
+
+    width:100%;
 
     margin:0 auto;
 
-    width:100%;
+    padding:120px 0;
 
 }
 
 .artist h2{
 
+    color:var(--cream);
 
     font-size:80px;
 
@@ -698,11 +695,9 @@ button{
 
     margin:20px 0;
 
-
 }
 
 .artist-box{
-
 
     width:300px;
 
@@ -725,7 +720,6 @@ button{
     font-weight:900;
 
     font-size:35px;
-
 
 }
 
@@ -800,8 +794,14 @@ footer{
     .artist{
 
         flex-direction:column;
+
+        align-items:center;
+
         gap:40px;
+
         text-align:center;
+
+        padding:70px 0;
 
     }
 
