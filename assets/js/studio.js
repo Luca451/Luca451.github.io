@@ -1,5 +1,5 @@
 /*
-3MI Studio
+3MI 
 DAW Interaction
 */
 
