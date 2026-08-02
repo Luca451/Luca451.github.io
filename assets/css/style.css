@@ -1480,95 +1480,61 @@ NAV HOVER
 }
 
 /* 
-   PORTFOLIO MOBILE
+   PORTFOLIO SPOTIFY MOBILE
  */
+
 
 @media(max-width:900px){
 
 
-    .portfolio{
-
-        padding:60px 0;
-
-    }
-
-
-    .portfolio-hero{
-
-        padding-top:40px;
-
-        max-width:100%;
-
-    }
-
-
-    .portfolio-hero h1{
-
-        font-size:55px;
-
-        line-height:.95;
-
-        letter-spacing:-2px;
-
-        margin:20px 0;
-
-    }
-
-
     .portfolio-grid{
 
-        display:grid;
+        width:100%;
 
-        grid-template-columns:1fr;
+        display:block;
 
-        gap:25px;
+    }
 
-        margin:50px auto;
+
+
+    .spotify-card{
+
+        width:100%;
+
+        max-width:none;
+
+        margin:0;
+
+    }
+
+
+
+    .spotify-embed{
 
         width:100%;
 
     }
 
 
-    .portfolio-card{
 
-        height:350px;
+    .spotify-embed iframe{
 
-        border-radius:25px;
+        width:100% !important;
 
-    }
+        height:450px !important;
 
-
-    .portfolio-card img{
-
-        width:100%;
-
-        height:100%;
-
-        object-fit:cover;
+        border-radius:20px;
 
     }
 
-
-    .portfolio-overlay{
-
-        padding:25px;
-
-    }
 
 
     .portfolio-overlay h2{
 
-        font-size:28px;
+        font-size:32px;
 
     }
 
-
-    .portfolio-overlay p{
-
-        font-size:13px;
-
-    }
 
 
 }
