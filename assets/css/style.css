@@ -1583,3 +1583,136 @@ NAV HOVER
 
 
 }
+
+/* 
+   MOBILE MENU FIX
+*/
+
+.menu-toggle{
+
+    display:none;
+
+    background:var(--surface);
+
+    border:none;
+
+    color:var(--cream);
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:15px;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+
+    .navbar{
+
+        height:80px;
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:space-between;
+
+        position:relative;
+
+    }
+
+
+
+    .logo{
+
+        font-size:32px;
+
+    }
+
+
+
+    .menu-toggle{
+
+        display:flex;
+
+        margin-left:auto;
+
+    }
+
+
+
+    .nav-menu{
+
+        position:absolute;
+
+        top:90px;
+
+        left:0;
+
+        right:0;
+
+        background:var(--surface);
+
+        border-radius:20px;
+
+        padding:30px;
+
+
+        display:none;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:25px;
+
+
+        z-index:100;
+
+    }
+
+
+
+    .nav-menu.active{
+
+        display:flex;
+
+    }
+
+
+
+    .nav-menu a{
+
+        font-size:18px;
+
+        color:var(--cream);
+
+        letter-spacing:3px;
+
+    }
+
+
+
+    .nav-menu a::after{
+
+        display:none;
+
+    }
+
+
+}
