@@ -1396,7 +1396,10 @@ NAV HOVER
 
 }
 
-/* MOBILE MENU */
+/* 
+   MOBILE MENU
+ */
+
 
 .menu-toggle{
 
@@ -1412,12 +1415,24 @@ NAV HOVER
 
     cursor:pointer;
 
+    font-family:inherit;
+
 }
 
 
-/* MOBILE */
+
 
 @media(max-width:900px){
+
+
+
+    .navbar{
+
+        position:relative;
+
+    }
+
+
 
 
     .menu-toggle{
@@ -1427,11 +1442,6 @@ NAV HOVER
     }
 
 
-    .navbar{
-
-        position:relative;
-
-    }
 
 
     .nav-menu{
@@ -1450,15 +1460,23 @@ NAV HOVER
 
         padding:30px;
 
+
         display:none;
 
         flex-direction:column;
 
+        align-items:center;
+
         gap:25px;
+
 
         text-align:center;
 
+        z-index:100;
+
     }
+
+
 
 
     .nav-menu.active{
@@ -1468,13 +1486,27 @@ NAV HOVER
     }
 
 
+
+
     .nav-menu a{
 
         font-size:18px;
 
         color:var(--cream);
 
+        letter-spacing:3px;
+
     }
+
+
+
+
+    .nav-menu a::after{
+
+        display:none;
+
+    }
+
 
 
 }
@@ -1535,110 +1567,6 @@ NAV HOVER
 
     }
 
-
-
-}
-
-/* 
-   ABOUT MOBILE
- */
-
-
-@media(max-width:900px){
-
-
-    .about-hero{
-
-        padding-top:40px;
-
-    }
-
-
-
-    .about-hero h1{
-
-        font-size:55px;
-
-        line-height:.95;
-
-        letter-spacing:-2px;
-
-    }
-
-
-
-    .about-hero .description{
-
-        font-size:16px;
-
-        line-height:1.7;
-
-        text-align:left;
-
-    }
-
-
-
-
-    .about-image-section{
-
-        margin:50px auto;
-
-        width:100%;
-
-    }
-
-
-
-    .about-image-card{
-
-        height:300px;
-
-        border-radius:25px;
-
-    }
-
-
-
-    .about-image-card img{
-
-        width:100%;
-
-        height:100%;
-
-        object-fit:cover;
-
-    }
-
-
-
-    .about-overlay{
-
-        padding:25px;
-
-    }
-
-
-
-    .about-overlay h2{
-
-        font-size:32px;
-
-    }
-
-
-
-    .artist{
-
-        padding:70px 0;
-
-        flex-direction:column;
-
-        gap:40px;
-
-        text-align:center;
-
-    }
 
 
 }
