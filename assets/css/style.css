@@ -534,9 +534,9 @@ button{
 
 }
 
-/* 
+/* =========================
    3MI STUDIO OBJECT
- */
+========================= */
 
 .studio-object {
 
@@ -552,6 +552,8 @@ button{
 
 }
 
+
+/* KREIS */
 
 .studio-object-inner {
 
@@ -576,7 +578,6 @@ button{
     color:var(--cream);
 
     background:
-
         radial-gradient(
             circle,
             rgba(216,199,163,.08),
@@ -585,15 +586,59 @@ button{
         );
 
     box-shadow:
-
         0 0 40px rgba(216,199,163,.08),
-
         inset 0 0 40px rgba(216,199,163,.04);
 
 }
 
 
-/* kleine Nummer oben */
+/* =========================
+   DREHENDER RING
+========================= */
+
+.studio-object-inner::after {
+
+    content:"";
+
+    position:absolute;
+
+    inset:-12px;
+
+    border-radius:50%;
+
+    border:1px solid transparent;
+
+    border-top-color:var(--cream);
+
+    border-right-color:rgba(216,199,163,.25);
+
+    animation:studioRotate 4s linear infinite;
+
+}
+
+
+/* Drehung */
+
+@keyframes studioRotate {
+
+    from {
+
+        transform:rotate(0deg);
+
+    }
+
+    to {
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================
+   NUMMER
+========================= */
 
 .object-number {
 
@@ -614,7 +659,9 @@ button{
 }
 
 
-/* 3MI Logo */
+/* =========================
+   LOGO
+========================= */
 
 .object-logo {
 
@@ -629,7 +676,9 @@ button{
 }
 
 
-/* Linie */
+/* =========================
+   LINIE
+========================= */
 
 .object-line {
 
@@ -646,7 +695,9 @@ button{
 }
 
 
-/* MUSIC / ARTISTS / PRODUCTION */
+/* =========================
+   TEXT
+========================= */
 
 .object-text {
 
@@ -663,7 +714,9 @@ button{
 }
 
 
-/* kleiner äußerer Akzent */
+/* =========================
+   KLEINER PUNKT OBEN
+========================= */
 
 .studio-object-inner::before {
 
@@ -690,41 +743,9 @@ button{
 }
 
 
-/* dezente Animation */
-
-.studio-object-inner {
-
-    animation:studioFloat 5s ease-in-out infinite;
-
-}
-
-
-@keyframes studioFloat {
-
-    0% {
-
-        transform:translateY(0);
-
-    }
-
-    50% {
-
-        transform:translateY(-8px);
-
-    }
-
-    100% {
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-/* 
+/* =========================
    MOBILE
- */
+========================= */
 
 @media(max-width:900px) {
 
