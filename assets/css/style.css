@@ -534,6 +534,253 @@ button{
 
 }
 
+/* 
+   3MI STUDIO OBJECT
+ */
+
+.studio-object {
+
+    width:100%;
+
+    height:420px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.studio-object-inner {
+
+    position:relative;
+
+    width:360px;
+
+    height:360px;
+
+    border:1px solid rgba(216,199,163,.35);
+
+    border-radius:50%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--cream);
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(216,199,163,.08),
+            rgba(17,17,15,.15) 60%,
+            rgba(17,17,15,.4)
+        );
+
+    box-shadow:
+
+        0 0 40px rgba(216,199,163,.08),
+
+        inset 0 0 40px rgba(216,199,163,.04);
+
+}
+
+
+/* kleine Nummer oben */
+
+.object-number {
+
+    position:absolute;
+
+    top:65px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    color:var(--muted);
+
+}
+
+
+/* 3MI Logo */
+
+.object-logo {
+
+    font-size:72px;
+
+    letter-spacing:10px;
+
+    line-height:1;
+
+    color:var(--cream);
+
+}
+
+
+/* Linie */
+
+.object-line {
+
+    width:80px;
+
+    height:1px;
+
+    margin:25px 0;
+
+    background:var(--cream);
+
+    opacity:.5;
+
+}
+
+
+/* MUSIC / ARTISTS / PRODUCTION */
+
+.object-text {
+
+    text-align:center;
+
+    font-size:10px;
+
+    line-height:2;
+
+    letter-spacing:4px;
+
+    color:var(--muted);
+
+}
+
+
+/* kleiner äußerer Akzent */
+
+.studio-object-inner::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:12px;
+
+    height:12px;
+
+    border:1px solid var(--cream);
+
+    border-radius:50%;
+
+    top:15px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:var(--bg);
+
+}
+
+
+/* dezente Animation */
+
+.studio-object-inner {
+
+    animation:studioFloat 5s ease-in-out infinite;
+
+}
+
+
+@keyframes studioFloat {
+
+    0% {
+
+        transform:translateY(0);
+
+    }
+
+    50% {
+
+        transform:translateY(-8px);
+
+    }
+
+    100% {
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* 
+   MOBILE
+ */
+
+@media(max-width:900px) {
+
+    .studio-object {
+
+        height:340px;
+
+        margin-top:20px;
+
+    }
+
+
+    .studio-object-inner {
+
+        width:280px;
+
+        height:280px;
+
+    }
+
+
+    .object-logo {
+
+        font-size:52px;
+
+        letter-spacing:7px;
+
+    }
+
+
+    .object-number {
+
+        top:48px;
+
+    }
+
+
+    .object-line {
+
+        margin:18px 0;
+
+        width:60px;
+
+    }
+
+
+    .object-text {
+
+        font-size:8px;
+
+        letter-spacing:3px;
+
+    }
+
+}
+
 /* SERVICES */
 
 .services{
