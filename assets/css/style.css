@@ -2109,3 +2109,70 @@ footer{
     }
 }
 
+/* =========================================================
+   3MI STUDIO — CLEAN FINAL OVERRIDES
+   ========================================================= */
+
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+::selection{background:var(--cream);color:var(--bg);}
+
+.navbar{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.nav-button,.primary{box-shadow:0 10px 30px rgba(216,199,163,.12),inset 0 1px 0 rgba(255,255,255,.18);}
+
+.hero h1,.artist h2{text-shadow:0 8px 40px rgba(0,0,0,.3);}
+.tag{display:inline-flex;align-items:center;gap:12px;white-space:nowrap;}
+.tag::before,.tag::after{content:"";width:28px;height:1px;flex:0 0 28px;background:var(--cream);box-shadow:0 0 12px rgba(216,199,163,.45);}
+
+.hero-card,.service-card,.portfolio-card{border:1px solid rgba(216,199,163,.10);}
+.hero-card{position:relative;overflow:hidden;}
+.hero-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 25%,rgba(216,199,163,.08),transparent 38%);}
+
+.studio-object-inner{transition:transform .45s ease,box-shadow .45s ease;}
+.studio-object-inner:hover{transform:scale(1.025);box-shadow:0 25px 70px rgba(0,0,0,.5),0 0 45px rgba(216,199,163,.12);}
+
+.service-card{position:relative;overflow:hidden;}
+.service-card::before{content:"";position:absolute;top:0;left:30px;right:30px;height:1px;background:linear-gradient(90deg,transparent,rgba(216,199,163,.35),transparent);opacity:.7;}
+.service-card h3{transition:transform .35s ease,color .35s ease;}
+.service-card:hover h3{transform:translateX(4px);color:var(--cream);}
+.service-card p{transition:color .35s ease;}
+.service-card:hover p{color:#b4aea2;}
+
+.portfolio-card{position:relative;isolation:isolate;}
+.portfolio-card::after{content:"";position:absolute;inset:0;pointer-events:none;border:1px solid rgba(216,199,163,.12);border-radius:inherit;opacity:0;transition:opacity .4s ease;}
+.portfolio-card:hover::after{opacity:1;}
+.portfolio-card:hover{transform:translateY(-10px) scale(1.008);}
+
+.about-image-card{box-shadow:0 25px 70px rgba(0,0,0,.28),0 0 45px rgba(216,199,163,.05);}
+.artist-box{box-shadow:0 25px 70px rgba(0,0,0,.3),0 0 50px rgba(216,199,163,.08);}
+
+footer{border-top-color:rgba(216,199,163,.12);}
+
+a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offset:5px;}
+
+@media(max-width:900px){
+  .hero{padding-top:30px;}
+  .hero h1{font-size:clamp(48px,13vw,70px);line-height:.94;}
+  .buttons{flex-wrap:wrap;}
+  .services,.portfolio{padding:90px 0;}
+  .portfolio-hero{padding-top:70px;}
+  .portfolio-hero h1{font-size:clamp(48px,13vw,70px);}
+  .about-image-card{height:420px;}
+  footer{flex-wrap:wrap;gap:20px;}
+}
+
+@media(max-width:520px){
+  .page{padding-left:18px;padding-right:18px;}
+  .tag{font-size:10px;letter-spacing:3px;}
+  .tag::before,.tag::after{width:20px;flex-basis:20px;}
+  .description{font-size:15px;line-height:1.55;}
+  .buttons{flex-direction:column;width:100%;}
+  .primary,.secondary{width:100%;min-height:54px;}
+  .hero-card{padding:22px;}
+  .studio-object-inner::after{inset:16px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+}
