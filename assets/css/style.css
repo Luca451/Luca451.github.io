@@ -386,19 +386,23 @@ button{
 }
 
 .primary{
-
-
     background:var(--cream);
-
+    color:#11110f;
     border:none;
-
     padding:18px 35px;
-
     border-radius:40px;
-
     font-weight:700;
 
+    box-shadow:
+        0 10px 30px rgba(216,199,163,.12);
 
+    transition:.35s ease;
+}
+
+.primary:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 15px 40px rgba(216,199,163,.22);
 }
 
 .secondary{
@@ -770,7 +774,7 @@ button{
 .services{
 
     color:var(--cream);
-    padding:100px 0;
+    padding:140px 0;
 
     max-width:1200px;
 
@@ -851,27 +855,37 @@ button{
 }
 
 .service-card{
-
-
-    background:var(--surface);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.01)
+        ),
+        var(--surface);
 
     padding:40px;
-
     border-radius:25px;
-
     min-height:260px;
 
-    transition:.3s;
+    border:1px solid rgba(216,199,163,.10);
 
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.18);
 
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
 }
 
 .service-card:hover{
+    transform:translateY(-10px);
 
+    border-color:rgba(216,199,163,.28);
 
-    transform:translateY(-8px);
-
-
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35),
+        0 0 30px rgba(216,199,163,.05);
 }
 
 .service-card h3{
@@ -1059,13 +1073,10 @@ footer{
 .portfolio{
 
 
-    padding:120px 0;
+    padding:140px 0;
 
 
 }
-
-
-
 
 .portfolio-grid{
 
@@ -1381,41 +1392,27 @@ NAV HOVER
 
 }
 
-
-
-
-
 .portfolio-card img{
-
-
     width:100%;
-
     height:100%;
-
     object-fit:cover;
 
-    transition:.6s;
+    filter:
+        saturate(.85)
+        contrast(1.05);
 
-
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        filter .8s ease;
 }
-
-
-
-
-
 
 .portfolio-card:hover img{
+    transform:scale(1.06);
 
-
-    transform:scale(1.08);
-
-
+    filter:
+        saturate(1)
+        contrast(1.05);
 }
-
-
-
-
-
 
 .portfolio-overlay{
 
@@ -1440,11 +1437,6 @@ NAV HOVER
 
 }
 
-
-
-
-
-
 .portfolio-overlay h2{
 
 
@@ -1454,11 +1446,6 @@ NAV HOVER
 
 
 }
-
-
-
-
-
 
 .portfolio-overlay p{
 
