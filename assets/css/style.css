@@ -2176,3 +2176,57 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offs
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
 }
+
+/* =========================================================
+   3MI STUDIO — MOBILE MENU CLICK FIX
+   ========================================================= */
+@media (max-width:900px){
+    .navbar{
+        position:relative;
+        z-index:1000;
+        isolation:isolate;
+    }
+
+    .menu-toggle{
+        position:relative;
+        z-index:3000;
+        pointer-events:auto;
+        touch-action:manipulation;
+    }
+
+    .nav-menu{
+        position:absolute;
+        top:calc(100% + 10px);
+        left:0;
+        right:0;
+        z-index:2000;
+        pointer-events:none;
+        opacity:0;
+        visibility:hidden;
+        transform:translateY(-8px);
+        transition:opacity .2s ease, transform .2s ease, visibility .2s ease;
+    }
+
+    .nav-menu.active{
+        display:flex;
+        pointer-events:auto;
+        opacity:1;
+        visibility:visible;
+        transform:translateY(0);
+    }
+
+    .nav-menu a{
+        position:relative;
+        z-index:2001;
+        display:block;
+        pointer-events:auto;
+        touch-action:manipulation;
+    }
+}
+
+@media (prefers-reduced-motion:reduce){
+    .nav-menu{
+        transition:none;
+        transform:none;
+    }
+}
