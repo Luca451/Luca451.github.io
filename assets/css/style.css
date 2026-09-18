@@ -1952,7 +1952,8 @@ footer{
     gap:12px;
 }
 
-.tag::before{
+.tag::before,
+.tag::after {
     content:"";
     width:28px;
     height:1px;
