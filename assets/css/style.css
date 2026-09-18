@@ -1,3 +1,7 @@
+   /* 
+   3MI STUDIO
+   Designed & coded by @luca */ 
+
 :root{
 
 
@@ -592,48 +596,7 @@ button{
 }
 
 
-/* =========================
-   DREHENDER RING
-========================= */
-
-.studio-object-inner::after {
-
-    content:"";
-
-    position:absolute;
-
-    inset:-12px;
-
-    border-radius:50%;
-
-    border:1px solid transparent;
-
-    border-top-color:var(--cream);
-
-    border-right-color:rgba(216,199,163,.25);
-
-    animation:studioRotate 4s linear infinite;
-
-}
-
-
-/* Drehung */
-
-@keyframes studioRotate {
-
-    from {
-
-        transform:rotate(0deg);
-
-    }
-
-    to {
-
-        transform:rotate(360deg);
-
-    }
-
-}
+/* DREHENDER RING ENTFERNT */
 
 
 /* =========================
@@ -2046,8 +2009,6 @@ NAV HOVER
 
     border-radius:50%;
 
-    animation:objectRotate 25s linear infinite;
-
 }
 
 
@@ -2167,23 +2128,7 @@ NAV HOVER
 }
 
 
-/* ROTATION */
-
-@keyframes objectRotate {
-
-    from {
-
-        transform:rotate(0deg);
-
-    }
-
-    to {
-
-        transform:rotate(360deg);
-
-    }
-
-}
+/* ROTATION ENTFERNT */
 
 
 /* 
@@ -2207,3 +2152,247 @@ NAV HOVER
     }
 
 }
+
+/* =========================================================
+   3MI PREMIUM POLISH
+   Bestehendes Design bleibt erhalten – nur veredelt.
+   ========================================================= */
+
+:root{
+    --cream-bright:#f2e8cf;
+    --line:rgba(216,199,163,.18);
+}
+
+/* Dezentes Licht über dem bestehenden Hintergrund */
+.background-layer{
+    filter:saturate(.88) contrast(1.04);
+}
+
+.page{
+    position:relative;
+}
+
+.page::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+    background:
+        radial-gradient(circle at 78% 18%, rgba(216,199,163,.09), transparent 28%),
+        radial-gradient(circle at 12% 82%, rgba(255,255,255,.035), transparent 24%);
+}
+
+/* Navigation */
+.navbar{
+    border-bottom:1px solid rgba(216,199,163,.08);
+}
+
+.navbar nav a{
+    transition:color .3s ease, transform .3s ease;
+}
+
+.navbar nav a:hover{
+    transform:translateY(-2px);
+}
+
+.nav-button,
+.primary{
+    background:linear-gradient(135deg,var(--cream-bright),var(--cream));
+    box-shadow:0 10px 30px rgba(216,199,163,.12);
+    transition:transform .3s ease, box-shadow .3s ease, filter .3s ease;
+}
+
+.nav-button:hover,
+.primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 38px rgba(216,199,163,.2);
+    filter:brightness(1.04);
+}
+
+.secondary{
+    border-color:rgba(216,199,163,.3);
+    transition:transform .3s ease, border-color .3s ease, background .3s ease;
+}
+
+.secondary:hover{
+    transform:translateY(-3px);
+    border-color:var(--cream);
+    background:rgba(216,199,163,.06);
+}
+
+/* Hero */
+.hero{
+    position:relative;
+}
+
+.hero > *{
+    animation:premiumReveal .8s ease both;
+}
+
+.hero > *:nth-child(2){
+    animation-delay:.12s;
+}
+
+.tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+}
+
+.tag::before{
+    content:"";
+    width:28px;
+    height:1px;
+    background:var(--cream);
+    box-shadow:0 0 12px rgba(216,199,163,.45);
+}
+
+h1,
+.artist h2{
+    text-shadow:0 8px 40px rgba(0,0,0,.3);
+}
+
+/* Studio-Objekt: statisch statt drehend */
+.studio-object::before{
+    animation:none !important;
+    border-color:rgba(216,199,163,.2);
+    box-shadow:0 0 45px rgba(216,199,163,.06);
+}
+
+.studio-object::after{
+    box-shadow:inset 0 0 30px rgba(216,199,163,.04);
+}
+
+.studio-object-inner{
+    transition:transform .45s ease, box-shadow .45s ease;
+}
+
+.studio-object-inner:hover{
+    transform:scale(1.025);
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.5),
+        0 0 45px rgba(216,199,163,.12);
+}
+
+/* Karten */
+.service-card,
+.portfolio-card,
+.hero-card{
+    border:1px solid rgba(216,199,163,.08);
+    box-shadow:0 20px 60px rgba(0,0,0,.16);
+}
+
+.service-card{
+    position:relative;
+    overflow:hidden;
+}
+
+.service-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:30px;
+    right:30px;
+    height:1px;
+    background:linear-gradient(90deg,transparent,rgba(216,199,163,.35),transparent);
+    opacity:.7;
+}
+
+.service-card:hover{
+    border-color:rgba(216,199,163,.2);
+    box-shadow:0 25px 70px rgba(0,0,0,.28);
+}
+
+/* Portfolio */
+.portfolio-card{
+    box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.portfolio-card::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    border:1px solid rgba(216,199,163,.12);
+    border-radius:inherit;
+    opacity:0;
+    transition:opacity .4s ease;
+}
+
+.portfolio-card:hover::after{
+    opacity:1;
+}
+
+.portfolio-card img{
+    filter:saturate(.9);
+}
+
+.portfolio-overlay{
+    padding-top:70px;
+}
+
+/* Artist-Bereich */
+.artist-box{
+    position:relative;
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.3),
+        0 0 50px rgba(216,199,163,.08);
+    transition:transform .4s ease, box-shadow .4s ease;
+}
+
+.artist-box:hover{
+    transform:translateY(-8px) rotate(1deg);
+    box-shadow:
+        0 35px 85px rgba(0,0,0,.4),
+        0 0 65px rgba(216,199,163,.14);
+}
+
+/* Dezente Section-Trenner */
+.services,
+.portfolio,
+.artist{
+    position:relative;
+}
+
+.services::before,
+.portfolio::before,
+.artist::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    width:min(900px,70%);
+    height:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(90deg,transparent,rgba(216,199,163,.14),transparent);
+}
+
+/* Footer */
+footer{
+    border-top-color:rgba(216,199,163,.12);
+}
+
+/* Bewegungen bei reduzierter Animation deaktivieren */
+@media (prefers-reduced-motion: reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+}
+
+@keyframes premiumReveal{
+    from{
+        opacity:0;
+        transform:translateY(18px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
