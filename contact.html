@@ -70,14 +70,18 @@
 
       </h1>
 
-      <p class="description">
+        <p class="description"
+            data-de="Du hast eine Idee, ein Projekt oder möchtest mit 3MI arbeiten? Schreib mir und starte deine Produktion. 
+                   Klicke auf die socials um den Kontankt zu mir suchen."
+            data-en="Do you have an idea, a project, or would you like to work with 3MI? Send me a message and get your production started. 
+                    Click on the social media links to find my contact information.">
 
-        Du hast eine Idee, ein Projekt oder
-        möchtest mit 3MI  arbeiten?
-        Schreib mir und starte deine Produktion. 
-        Klicke auf die socials um den Kontankt zu mir suchen. 
+            Du hast eine Idee, ein Projekt oder möchtest mit 3MI arbeiten? 
+            Schreib mir und starte deine Produktion. 
+            Klicke auf die socials um den Kontankt zu mir suchen.
 
-      </p>
+        </p>
+
       
     </section>
 
@@ -199,6 +203,70 @@ menuButton.addEventListener("click",()=>{
 
 });
 
+</script>
+
+/* language-switch */ 
+
+<script>
+(function () {
+
+    const STORAGE_KEY = "3mi-language";
+
+    const buttons = document.querySelectorAll("[data-language]");
+
+    function applyLanguage(lang) {
+
+        const language = lang === "en" ? "en" : "de";
+
+        document.documentElement.lang = language;
+
+        localStorage.setItem(STORAGE_KEY, language);
+
+        document
+            .querySelectorAll("[data-de][data-en]")
+            .forEach(function (element) {
+
+                element.innerHTML =
+                    element.getAttribute("data-" + language);
+
+            });
+
+        const title =
+            document.querySelector("title[data-de][data-en]");
+
+        if (title) {
+            title.textContent =
+                title.getAttribute("data-" + language);
+        }
+
+        buttons.forEach(function (button) {
+
+            const active =
+                button.dataset.language === language;
+
+            button.classList.toggle("active", active);
+
+            button.setAttribute(
+                "aria-pressed",
+                active ? "true" : "false"
+            );
+
+        });
+    }
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+            applyLanguage(button.dataset.language);
+        });
+
+    });
+
+    applyLanguage(
+        localStorage.getItem(STORAGE_KEY) || "de"
+    );
+
+})();
 </script>
 
 </body>

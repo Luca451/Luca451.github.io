@@ -2366,3 +2366,53 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offs
     }
 
 }
+
+/* 
+   LANGUAGE SWITCH
+    */
+
+.language-switch {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-left: 24px;
+    flex-shrink: 0;
+}
+
+.language-switch button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    padding: 5px 2px;
+    cursor: pointer;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.language-switch button:hover,
+.language-switch button.active {
+    color: var(--cream);
+}
+
+.language-switch span {
+    color: var(--muted);
+    opacity: 0.55;
+    font-size: 11px;
+}
+
+@media (max-width: 900px) {
+    .language-switch {
+        margin-left: auto;
+        margin-right: 14px;
+        position: relative;
+        z-index: 3001;
+    }
+
+    .language-switch button {
+        font-size: 11px;
+        padding: 8px 3px;
+    }
+}

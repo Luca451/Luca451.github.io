@@ -176,16 +176,23 @@
 
 
 
-    <p class="description">
+        <p class="description"
+            data-de="Ich bin Musikproduzent und Audio Engineer mit Leidenschaft für hochwertigen Sound und individuelle Produktionen. 
+                    Mein Fokus liegt darauf, kreative Ideen professionell umzusetzen – von der ersten Aufnahme bis zum fertigen Release.
+                    Ich biete professionelle Recordings für Vocals, Instrumente und komplette Produktionen sowie präzises Mixing für einen modernen, ausgewogenen Studiosound. 
+                    Durch sorgfältiges Mastering erhalten Songs den letzten Feinschliff und sind optimal für Streaming-Plattformen und Releases vorbereitet.
+                    Darüber hinaus komponiere ich individuelle Musik mit eigener Atmosphäre und entwickle passendes Sounddesign sowie Vertonungen für verschiedenste Medienprojekte. 
+                    Mein Anspruch ist es, jede Produktion klanglich auf höchstem Niveau umzusetzen und den Charakter jedes Projekts authentisch hervorzuheben."
+            data-en="I am a music producer and audio engineer with a passion for high-quality sound and custom productions.
+                    My focus is on professionally bringing creative ideas to life—from the initial recording to the finished release.
+                    I offer professional recordings for vocals, instruments, and complete productions, as well as precise mixing for a modern, balanced studio sound.
+                    Careful mastering gives songs the final polish and ensures they are optimally prepared for streaming platforms and releases.
+                    In addition, I compose custom music with its own unique atmosphere and develop tailored sound design and soundtracks for a wide variety of media projects.
+                    My goal is to deliver every production at the highest sonic standard and to authentically highlight the character of each project.">
 
-    Ich bin Musikproduzent und Audio Engineer mit Leidenschaft für hochwertigen Sound und individuelle Produktionen. 
-    Mein Fokus liegt darauf, kreative Ideen professionell umzusetzen – von der ersten Aufnahme bis zum fertigen Release.
-    Ich biete professionelle Recordings für Vocals, Instrumente und komplette Produktionen sowie präzises Mixing für einen modernen, ausgewogenen Studiosound. 
-    Durch sorgfältiges Mastering erhalten Songs den letzten Feinschliff und sind optimal für Streaming-Plattformen und Releases vorbereitet.
-    Darüber hinaus komponiere ich individuelle Musik mit eigener Atmosphäre und entwickle passendes Sounddesign sowie Vertonungen für verschiedenste Medienprojekte. 
-    Mein Anspruch ist es, jede Produktion klanglich auf höchstem Niveau umzusetzen und den Charakter jedes Projekts authentisch hervorzuheben.
+            
 
-    </p>
+        </p>
 
 
 </section>
@@ -496,6 +503,69 @@ menuButton.addEventListener("click",()=>{
 
 });
 
+</script>
+
+/* language-switch */ 
+<script>
+(function () {
+
+    const STORAGE_KEY = "3mi-language";
+
+    const buttons = document.querySelectorAll("[data-language]");
+
+    function applyLanguage(lang) {
+
+        const language = lang === "en" ? "en" : "de";
+
+        document.documentElement.lang = language;
+
+        localStorage.setItem(STORAGE_KEY, language);
+
+        document
+            .querySelectorAll("[data-de][data-en]")
+            .forEach(function (element) {
+
+                element.innerHTML =
+                    element.getAttribute("data-" + language);
+
+            });
+
+        const title =
+            document.querySelector("title[data-de][data-en]");
+
+        if (title) {
+            title.textContent =
+                title.getAttribute("data-" + language);
+        }
+
+        buttons.forEach(function (button) {
+
+            const active =
+                button.dataset.language === language;
+
+            button.classList.toggle("active", active);
+
+            button.setAttribute(
+                "aria-pressed",
+                active ? "true" : "false"
+            );
+
+        });
+    }
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+            applyLanguage(button.dataset.language);
+        });
+
+    });
+
+    applyLanguage(
+        localStorage.getItem(STORAGE_KEY) || "de"
+    );
+
+})();
 </script>
 
 </body>

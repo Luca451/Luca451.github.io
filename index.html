@@ -69,6 +69,11 @@
         ☰
     </button>
 
+    <div class="language-switch">
+        <button type="button" data-language="de">DE</button>
+     <span>|</span>
+        <button type="button" data-language="en">EN</button>
+    </div>
 
     <nav class="nav-menu">
 
@@ -121,9 +126,11 @@
         </h1>
 
 
-        <p class="description">
+        <p class="description"
+            data-de="3MI entwickelt moderne Sounds, Artists und Produktionen mit einer klaren Vision."
+            data-en="3MI develops modern sounds, artists and productions with a clear vision.">
 
-            3MI  entwickelt moderne Sounds,
+            3MI entwickelt moderne Sounds,
             Artists und Produktionen mit einer
             klaren Vision.
 
@@ -161,11 +168,14 @@
                 Recording
             </h3>
 
-            <p>
-                Professionelle Aufnahme
-                von Vocals, Instrumenten
-                und Produktionen.
-            </p>
+        <p class="description"
+            data-de="Professionelle Aufnahme von Vocals, Instrumenten und Produktionen."
+            data-en="Professional recording of vocals, instruments, and productions.">
+
+            Professionelle Aufnahme von 
+            Vocals, Instrumenten und Produktionen.
+
+        </p>
 
         </article>
 
@@ -178,10 +188,13 @@
                 Mixing
             </h3>
 
-            <p>
-                Präzises Mixing für
-                einen modernen Studiosound.
-            </p>
+        <p class="description"
+            data-de="Präzises Mixing für einen modernen Studiosound."
+            data-en="Precise mixing for a modern studio sound.">
+
+            Präzises Mixing für einen modernen Studiosound.
+
+        </p>
 
         </article>
 
@@ -194,10 +207,13 @@
                 Mastering
             </h3>
 
-            <p>
-                Finaler Klang für Streaming,
-                Releases und Plattformen.
-            </p>
+        <p class="description"
+            data-de="Finaler Klang für Streaming, Releases und Plattformen."
+            data-en="Final mix for streaming, releases, and platforms.">
+
+            Finaler Klang für Streaming, Releases und Plattformen.
+
+        </p>
 
         </article>
 
@@ -206,14 +222,21 @@
 
         <article class="service-card">
 
-            <h3>
-                Vertonung
-            </h3>
+        <h3
+            data-de="Vertonung"
+            data-en="Soundtrack">
 
-            <p>
-                Musik und Sounddesign
-                für Medienprojekte.
-            </p>
+            Vertonung
+
+        </h3>
+
+        <p class="description"
+            data-de="Musik und Sounddesign für Medienprojekte."
+            data-en="Music and sound design for media projects.">
+
+            Musik und Sounddesign für Medienprojekte.
+
+        </p>
 
         </article>
 
@@ -222,14 +245,21 @@
 
         <article class="service-card">
 
-            <h3>
-                Komposition
-            </h3>
+        <h3
+            data-de="Komposition"
+            data-en="Composition">
 
-            <p>
-                Individuelle Musikproduktion
-                mit eigener Atmosphäre.
-            </p>
+            Komposition
+
+        </h3>
+
+        <p class="description"
+            data-de="Individuelle Musikproduktion mit eigener Atmosphäre."
+            data-en="Custom music production with its own unique atmosphere.">
+
+            Individuelle Musikproduktion mit eigener Atmosphäre.
+
+        </p>
 
         </article>
 
@@ -455,6 +485,70 @@ menuButton.addEventListener("click",()=>{
 
 });
 
+
+</script>
+
+/* language-switch */ 
+<script>
+(function () {
+
+    const STORAGE_KEY = "3mi-language";
+
+    const buttons = document.querySelectorAll("[data-language]");
+
+    function applyLanguage(lang) {
+
+        const language = lang === "en" ? "en" : "de";
+
+        document.documentElement.lang = language;
+
+        localStorage.setItem(STORAGE_KEY, language);
+
+        document
+            .querySelectorAll("[data-de][data-en]")
+            .forEach(function (element) {
+
+                element.innerHTML =
+                    element.getAttribute("data-" + language);
+
+            });
+
+        const title =
+            document.querySelector("title[data-de][data-en]");
+
+        if (title) {
+            title.textContent =
+                title.getAttribute("data-" + language);
+        }
+
+        buttons.forEach(function (button) {
+
+            const active =
+                button.dataset.language === language;
+
+            button.classList.toggle("active", active);
+
+            button.setAttribute(
+                "aria-pressed",
+                active ? "true" : "false"
+            );
+
+        });
+    }
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+            applyLanguage(button.dataset.language);
+        });
+
+    });
+
+    applyLanguage(
+        localStorage.getItem(STORAGE_KEY) || "de"
+    );
+
+})();
 </script>
 
 </body>

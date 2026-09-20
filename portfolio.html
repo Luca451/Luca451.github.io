@@ -157,23 +157,17 @@
 
 
 
-    <p class="description">
+        <p class="description"
+            data-de="Eine Auswahl an Projekten, an denen ich teilgenommen habe."
+            data-en="A selection of projects I've been involved in.">
 
-        Eine Auswahl an Projekten,
-        an denen ich teilgenommen habe.
+            Eine Auswahl an Projekten, an denen ich teilgenommen habe.
 
-    </p>
+        </p>
 
 
 
 </section>
-
-
-
-
-
-
-
 
 
 <!-- PROJECTS -->
@@ -699,6 +693,70 @@ menuButton.addEventListener("click",()=>{
 
 });
 
+</script>
+
+/* language-switch */
+
+<script>
+(function () {
+
+    const STORAGE_KEY = "3mi-language";
+
+    const buttons = document.querySelectorAll("[data-language]");
+
+    function applyLanguage(lang) {
+
+        const language = lang === "en" ? "en" : "de";
+
+        document.documentElement.lang = language;
+
+        localStorage.setItem(STORAGE_KEY, language);
+
+        document
+            .querySelectorAll("[data-de][data-en]")
+            .forEach(function (element) {
+
+                element.innerHTML =
+                    element.getAttribute("data-" + language);
+
+            });
+
+        const title =
+            document.querySelector("title[data-de][data-en]");
+
+        if (title) {
+            title.textContent =
+                title.getAttribute("data-" + language);
+        }
+
+        buttons.forEach(function (button) {
+
+            const active =
+                button.dataset.language === language;
+
+            button.classList.toggle("active", active);
+
+            button.setAttribute(
+                "aria-pressed",
+                active ? "true" : "false"
+            );
+
+        });
+    }
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+            applyLanguage(button.dataset.language);
+        });
+
+    });
+
+    applyLanguage(
+        localStorage.getItem(STORAGE_KEY) || "de"
+    );
+
+})();
 </script>
 
 </body>
