@@ -1912,7 +1912,6 @@ footer{
 
 /* 
    3MI PREMIUM POLISH
-   Bestehendes Design bleibt erhalten – nur veredelt.
     */
 
 :root{
@@ -2223,7 +2222,7 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offs
 }
 
 /* 
-   3MI STUDIO — MOBILE MENU CLICK FIX
+   3MI STUDIO
     */
 @media (max-width:900px){
     .navbar{
@@ -2276,9 +2275,9 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offs
     }
 }
 
-/* =====================================================
+/* 
    3MI PORTFOLIO – FINAL GRID
-   ===================================================== */
+    */
 
 .portfolio-grid {
     width: 94%;
@@ -2337,9 +2336,9 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offs
 }
 
 
-/* =====================================================
+/* 
    TABLET – 2 KARTEN
-   ===================================================== */
+    */
 
 @media (max-width: 700px) {
 
@@ -2351,9 +2350,9 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offs
 }
 
 
-/* =====================================================
+/* 
    HANDY – 1 KARTE
-   ===================================================== */
+    */
 
 @media (max-width: 500px) {
 
