@@ -2380,8 +2380,8 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offs
     margin: 4px 0 0 0;
 
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    transform: none;
 
     white-space: nowrap;
     z-index: 3001;
@@ -2424,8 +2424,8 @@ a:focus-visible,button:focus-visible{outline:1px solid var(--cream);outline-offs
     .language-switch {
         margin: 4px 0 0 0;
 
-        left: 50%;
-        transform: translateX(-50%);
+        left: 0;
+        transform: none;
     }
 
     .language-switch button {
